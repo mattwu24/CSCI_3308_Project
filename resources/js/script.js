@@ -1,28 +1,16 @@
-$(document).ready(function () {
+$(document).ready(function(){
 
-    $("#sidebar").mCustomScrollbar({
-         theme: "minimal"
+    var userLoc = $('#userLoc');
+    var submit = $("#submitLoc");
+    submit.click(function() {
+        if(userLoc.val() == undefined || userLoc.val() === '') {
+            console.log("TEST");
+            alert("Location Invalid - No Input");
+            return;
+        }
+
+        // regex here to parse address and make sure it's accessible
+        alert(userLoc.val());
     });
-
-    $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
-    });
-
-});
-
-$(document).ready(function () {
-
-    $("#sidebar").mCustomScrollbar({
-         theme: "minimal"
-    });
-
-    $('#sidebarCollapse').on('click', function () {
-
-        $('#sidebar').toggleClass('active');
-        
-        $('.collapse.in').toggleClass('in');
-
-        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-    });
-
-});
+  
+  });
