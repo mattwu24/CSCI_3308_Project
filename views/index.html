@@ -99,9 +99,15 @@
 
     <div class="container">
         <h1 class="display-4">To get started, where do you want your food delivered too?</h1>
-        <form>
-            <input type="text" name="location" placeholder="Enter Location" id="userLoc"/>
-            <input type="button" value="Submit" id="submitLoc">
+        <form class="form-inline center_div"> 
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" name="location" placeholder="Enter Location" id="userLoc" class="form-control"/>
+                <div class="space_div">
+                    <button type="button" class="btn btn-secondary btn-lg" value="Submit" id="submitLoc"> Submit </button>
+                    <button type="button" class="btn btn-secondary btn-lg" value="Submit" id="findMyLoc" onclick="getLocation()">Find My Location</button>    
+                </div>
+            </div>
+            <h1 class="display-4" id="locOut"></h1>
         </form>
     </div>
 
