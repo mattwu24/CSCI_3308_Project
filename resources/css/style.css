@@ -39,7 +39,7 @@ a, a:hover, a:focus {
 #sidebar {
     /* don't forget to add all the previously mentioned styles here too */
     background: #343a40;
-    color: #fff;
+    color: #6c757d;
     transition: all 0.3s;
 }
 
@@ -54,7 +54,7 @@ a, a:hover, a:focus {
 }
 
 #sidebar ul p {
-    color: #fff;
+    color: #6c757d;
     padding: 10px;
 }
 
@@ -65,7 +65,7 @@ a, a:hover, a:focus {
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
-    color: #fff;
+    color: #6c757d;
     background: #343a40;
 }
 ul ul a {

@@ -1,0 +1,20 @@
+{
+  "name": "hungernull",
+  "version": "1.0.1",
+  "description": "Consolidate food service options to one place.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErikPohle/CSCI_3308_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ErikPohle/CSCI_3308_Project/issues"
+  },
+  "homepage": "https://github.com/ErikPohle/CSCI_3308_Project#readme",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+}
