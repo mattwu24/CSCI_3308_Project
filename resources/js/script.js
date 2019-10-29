@@ -10,19 +10,17 @@ $(document).ready(function(){
             alert("Location Invalid - No Input");
             return;
         }
-
-        // regex here to parse address and make sure it's accessible
-        alert(userLoc.val());
     });
   
   });
 
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(showPosition);
-    } else { 
-        locOut.innerHTML = "Geolocation is not supported by this browser.";
-    }
+        userAllow = true;
+        navigator.geolocation.getCurrentPosition(showPosition, function(position) {
+            alert('Location Permissions Denined.');
+        });
+    } 
 }
     
 function showPosition(position) {
