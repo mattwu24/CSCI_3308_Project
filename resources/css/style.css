@@ -8,7 +8,7 @@
 #sidebar {
     width: 150px;
     position: fixed;
-    top: 50;
+    top: 0%;
     left: 0;
     height: 100vh;
     z-index: 999;
@@ -89,3 +89,7 @@ form {
 .space_div {
     padding-left: 20px;
 }
+
+#map {
+    height: 80%;
+  }
