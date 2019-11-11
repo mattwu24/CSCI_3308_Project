@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "script.js"
   },
   "repository": {
     "type": "git",
@@ -17,4 +18,5 @@
   },
   "homepage": "https://github.com/ErikPohle/CSCI_3308_Project#readme",
   "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+  
 }
