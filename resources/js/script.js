@@ -25,7 +25,7 @@ $( document ).ready(function() {
 });
 
 $(function () {
-  $('button').click(function() {
+  $('input').click(function() {
     // read what is selected
     var restaurantCards = document.getElementsByClassName("restaurantCards");
     var filterFoodType = document.getElementsByClassName("filterFoodType");
