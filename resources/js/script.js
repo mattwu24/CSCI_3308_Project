@@ -56,8 +56,11 @@ $(function () {
           }
         }
         else {
-          console.log(filterRating[i].value, " < ", filterParsed[0])
-          if(filterRating[i].value > filterParsed[0]) {
+          if(filterRating[i].value >= filterParsed[0]) {
+            restaurantCards[h].style.display = "none";
+            break;
+          }
+          else if(filterFoodType[i].value.includes(filterParsed[2])) {
             restaurantCards[h].style.display = "none";
             break;
           }
