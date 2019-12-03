@@ -32,16 +32,12 @@ $(function () {
     var restaurantType = document.getElementsByClassName("restaurantType");
 
     for(var i = 0; i < filterFoodType.length; i++) {
-      //console.log(filterFoodType[i].value)
       for(var j = 0; j < restaurantType.length; j++) {
-       // console.log('TYPE ', restaurantType[j].innerHTML)
-        //console.log(restaurantType[j].innerHTML.includes(filterFoodType[i].value))
-        if(filterFoodType[i].checked) {
-          if(restaurantType[j].innerText.includes(filterFoodType[i].value)) {
-            restaurantCards[j].style.display = "none";
-          }
+        if(filterFoodType[i].checked && restaurantType[j].innerText.includes(filterFoodType[i].value)) {
+          console.log(restaurantCards[j])
+          restaurantCards[j].style.display = "none";
         }
-        else {
+        else if(!filterFoodType[i].checked  && restaurantType[j].innerText.includes(filterFoodType[i].value)) {
           restaurantCards[j].style.display = "block";
         }
       }
