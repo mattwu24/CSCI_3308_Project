@@ -8,7 +8,7 @@ $( document ).ready(function() {
   var restaurantType = document.getElementsByClassName("restaurantType");
   var restaurantLink = document.getElementsByClassName("restaurantLink");
   var restaurantPic = document.getElementsByClassName("card-img-top");
-
+console.log(restaurantCards);
   var count = 0;
   for(x in restaurantInfo) {
     restaurantName[count].innerHTML = x;
@@ -18,6 +18,12 @@ $( document ).ready(function() {
     restaurantLink[count].href = restaurantInfo[x].RestaurantLink;
     restaurantLink[count].setAttribute('target', '_blank');
     restaurantLink[count].innerHTML = "Company Website";
+    var filterAtt = restaurantInfo[x].AverageRating + "," + restaurantInfo[x].AveragePrice + "," + restaurantInfo[x].FoodType;
+    // set filter val
+    //$('.restaurantCards').data('filterval', filterAtt);
+    restaurantCards[count].setAttribute('data-filter', filterAtt);
+    //console.log(restaurantCards[x]);
+    
     count++; 
   }
 });
@@ -27,12 +33,43 @@ $(function () {
     // read what is selected
     var restaurantCards = document.getElementsByClassName("restaurantCards");
     var filterFoodType = document.getElementsByClassName("filterFoodType");
-    var restaurantType = document.getElementsByClassName("restaurantType");
     var filterRating = document.getElementsByClassName("filterRating");
-    var restaurantRating = document.getElementsByClassName("restaurantRating");
+    var filtersChecked = [];
 
-    for(var i = 0; i < filterFoodType.length; i++) {
-      for(var j = 0; j < restaurantType.length; j++) {
+    var curFilter;
+    for(var h = 0; h < restaurantCards.length; h++) {
+      curFilter = restaurantCards[h].getAttribute('data-filter');
+
+      for(var i = 0; i < filterFoodType.length; i++) {
+        if(filterFoodType[i].checked) {
+          filtersChecked.push(filterFoodType[i].value);
+        }
+        if(filterRating[i].checked) {
+          filtersChecked.push(Number(filterRating[i].value));
+        }
+        // rating, price, food type
+        var filterParsed = curFilter.split(",");
+
+        if(filtersChecked.length == 0) {
+          for(var j = 0; j < restaurantCards.length; j++) {
+            restaurantCards[j].style.display = "none";
+          }
+        }
+        else {
+          console.log(filterRating[i].value, " < ", filterParsed[0])
+          if(filterRating[i].value > filterParsed[0]) {
+            restaurantCards[h].style.display = "none";
+            break;
+          }
+          else {
+            restaurantCards[h].style.display = "block";
+            break;
+          }
+        }
+      }
+      
+      //for(var j = 0; j < restaurantType.length; j++) {
+        /*
         var ratingParsed = restaurantRating[j].innerText.split(":");
         if(filterRating[i].checked && Number(ratingParsed[1]) < Number(filterRating[i].value)) {
           restaurantCards[j].style.display = "none";
@@ -42,8 +79,8 @@ $(function () {
         }
         if(!filterRating[i].checked && !filterFoodType[i].checked && restaurantType[j].innerText.includes(filterFoodType[i].value)) {
           restaurantCards[j].style.display = "none";
-        }
-      }
+        }*/
+      //}
     }
 
   });

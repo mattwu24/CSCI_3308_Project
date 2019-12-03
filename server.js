@@ -12,12 +12,26 @@ app.use(express.static(__dirname + '/'));
 app.get('/', function(req, res) {
 	res.render('pages/index',{
 		local_css:"style.css", 
-		my_title:"Main Page"
+		my_title:"Main Page" 
+	});
+});
+
+app.get('/about', function (req, res) {
+	res.render('pages/about', {
+		local_css: "style.css",
+		my_title: "About Page"
+	});
+});
+
+app.get('/team_members', function (req, res) {
+	res.render('pages/team_members', {
+		local_css: "style.css",
+		my_title: "About Page"
 	});
 });
 
 var reqTimer = setTimeout(function wakeUp() {
-	request("https://nameless-gorge-19527.herokuapp.com", function() {
+	request("https://herokunulldeploy.herokuapp.com/", function() {
 	   console.log("WAKE UP DYNO");
 	});
 	return reqTimer = setTimeout(wakeUp, 1200000);
@@ -25,12 +39,12 @@ var reqTimer = setTimeout(function wakeUp() {
 
 // for heroku deploy
 
-app.listen(process.env.PORT);
+//app.listen(process.env.PORT);
 
-/*
+
 // for local test
-//const port = 3030;
+const port = 3030;
 
 app.listen(port, function() {
     console.log('Express server listening on port ' + port);
-});*/
+});
