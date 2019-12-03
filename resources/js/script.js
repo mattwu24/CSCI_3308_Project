@@ -18,8 +18,6 @@ $( document ).ready(function() {
     restaurantLink[count].href = restaurantInfo[x].RestaurantLink;
     restaurantLink[count].setAttribute('target', '_blank');
     restaurantLink[count].innerHTML = "Company Website";
-
-    console.log(x);
     count++; 
   }
 });
@@ -30,15 +28,20 @@ $(function () {
     var restaurantCards = document.getElementsByClassName("restaurantCards");
     var filterFoodType = document.getElementsByClassName("filterFoodType");
     var restaurantType = document.getElementsByClassName("restaurantType");
+    var filterRating = document.getElementsByClassName("filterRating");
+    var restaurantRating = document.getElementsByClassName("restaurantRating");
 
     for(var i = 0; i < filterFoodType.length; i++) {
       for(var j = 0; j < restaurantType.length; j++) {
-        if(filterFoodType[i].checked && restaurantType[j].innerText.includes(filterFoodType[i].value)) {
-          console.log(restaurantCards[j])
+        var ratingParsed = restaurantRating[j].innerText.split(":");
+        if(filterRating[i].checked && Number(ratingParsed[1]) < Number(filterRating[i].value)) {
           restaurantCards[j].style.display = "none";
         }
-        else if(!filterFoodType[i].checked  && restaurantType[j].innerText.includes(filterFoodType[i].value)) {
+        if(filterFoodType[i].checked && restaurantType[j].innerText.includes(filterFoodType[i].value)) {
           restaurantCards[j].style.display = "block";
+        }
+        if(!filterRating[i].checked && !filterFoodType[i].checked && restaurantType[j].innerText.includes(filterFoodType[i].value)) {
+          restaurantCards[j].style.display = "none";
         }
       }
     }
