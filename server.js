@@ -18,12 +18,12 @@ app.get('/', function(req, res) {
 
 // for heroku deploy
 
-//app.listen(process.env.PORT);
+app.listen(process.env.PORT);
 
 
 // for local test
-const port = 3030;
+//const port = 3030;
 
-app.listen(port, function() {
-    console.log('Express server listening on port ' + port);
+//app.listen(port, function() {
+//    console.log('Express server listening on port ' + port);
 });
