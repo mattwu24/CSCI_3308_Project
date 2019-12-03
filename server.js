@@ -16,7 +16,13 @@ app.get('/', function(req, res) {
 	});
 });
 
-const port = 3000;
+// for heroku deploy
+/* 
+app.listen(process.env.PORT);
+*/
+
+// for local test
+const port = 3030;
 
 app.listen(port, function() {
     console.log('Express server listening on port ' + port);
