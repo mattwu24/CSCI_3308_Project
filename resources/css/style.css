@@ -5,16 +5,9 @@
     width: 100%;
 }
 
-#sidebar {
-    width: 150px;
-    position: fixed;
-    top: 0%;
-    left: 0;
-    height: 100vh;
-    z-index: 999;
-    background: #6c757d;
-    color: #fff;
-    transition: all 0.3s;
+#restaurants {
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 body {
