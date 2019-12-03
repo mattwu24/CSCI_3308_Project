@@ -117,6 +117,36 @@ var restaurantInfo =
 'Description' : 'At Wendy\'s, we\'re all about serving up fresh food, even if it means going the extra mile.',
 'RestaurantLink' : 'https://www.wendys.com/home',
 'Picture' : 'https://www.wendys.com/themes/custom/wendys_main/logo.svg'
+},
+'Cafe Mexicali': 
+{'FoodType' : 'Mexican Food',
+'AveragePrice' : 6.50,
+'AverageRating' : 4.5,
+'Menu' : {'Burrito' : 6.25, 'Enchilada' : 7.40, 'Drink' : 2.00, 'Taco' : 4.75 },
+'Address' : '2920 Baseline Rd, Boulder, CO 80303',
+'Description' : 'Cafe Mexicali\’s goal is to provide customers with Mexican genre food that is \“as fresh as it gets\”.',
+'RestaurantLink' : 'https://www.cafemexicali.com/',
+'Picture' : 'https://www.cafemexicali.com/uploads/3/8/8/0/38808339/1185599_orig.gif'
+},
+'Five Guys': 
+{'FoodType' : 'Fast Food',
+'AveragePrice' : 9.70,
+'AverageRating' : 4.7,
+'Menu' : {'Burger' : 7.35, 'Fries' : 4.50, 'Drink' : 1.00, 'Peanuts' : 0.00 },
+'Address' : '2920 Baseline Rd, Boulder, CO 80303',
+'Description' : 'We only use fresh ground beef. We only use peanut oil. There are no freezers in Five Guys locations, just coolers.',
+'RestaurantLink' : 'https://www.fiveguys.com/',
+'Picture' : 'https://static.thuisbezorgd.nl/images/chains/nl/fiveguys/logo_465x320.png'
+},
+'Cosmos Pizza': 
+{'FoodType' : 'Pizza',
+'AveragePrice' : 3.50,
+'AverageRating' : 3.3,
+'Menu' : {'Pizza' : 5.35, 'Spicy Ranch' : 1.50, 'Drink' : 1.25},
+'Address' : '2920 Baseline Rd, Boulder, CO 80303',
+'Description' : 'Late night pizza has never tasted so good.',
+'RestaurantLink' : 'http://cosmospizza.com/',
+'Picture' : 'http://cosmospizza.com/wp-content/uploads/2015/07/cosmospizza_logo.png'
 }
 };
 
