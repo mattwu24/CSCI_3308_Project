@@ -23,10 +23,12 @@ $( document ).ready(function() {
 
   // create menu items
   else if(window.location == "http://localhost:3030/Mcdonalds") {
+    var restDesc = document.getElementById('aboutMC');
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
     var foodPrice = document.getElementsByClassName("foodPrice");
     var count = 0;
+    restDesc.innerHTML = restaurantInfo["McDonalds"].Description;
     for(i in foodName) {
       for(x in restaurantInfo["McDonalds"].Menu) {
         foodName[count].innerHTML = x;
@@ -36,10 +38,12 @@ $( document ).ready(function() {
     }
   }
   else if(window.location == "http://localhost:3030/Qdoba") {
+    var restDesc = document.getElementById('descQD')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
     var foodPrice = document.getElementsByClassName("foodPrice");
     var count = 0;
+    restDesc.innerHTML = restaurantInfo["Qdoba"].Description;
     for(i in foodName) {
       for(x in restaurantInfo["Qdoba"].Menu) {
         foodName[count].innerHTML = x;
@@ -49,10 +53,12 @@ $( document ).ready(function() {
     }
   }
   else if(window.location == "http://localhost:3030/Subway") {
+    var restDesc = document.getElementById('descSW')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
     var foodPrice = document.getElementsByClassName("foodPrice");
     var count = 0;
+    restDesc.innerHTML = restaurantInfo["Subway"].Description;
     for(i in foodName) {
       for(x in restaurantInfo["Subway"].Menu) {
         foodName[count].innerHTML = x;
@@ -62,10 +68,12 @@ $( document ).ready(function() {
     }
   }
   else if(window.location == "http://localhost:3030/Dominos") {
+    var restDesc = document.getElementById('descD')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
     var foodPrice = document.getElementsByClassName("foodPrice");
     var count = 0;
+    restDesc.innerHTML = restaurantInfo["Dominos"].Description;
     for(i in foodName) {
       for(x in restaurantInfo["Dominos"].Menu) {
         foodName[count].innerHTML = x;
@@ -75,10 +83,12 @@ $( document ).ready(function() {
     }
   }
   else if(window.location == "http://localhost:3030/PizzaHut") {
+    var restDesc = document.getElementById('descPH')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
     var foodPrice = document.getElementsByClassName("foodPrice");
     var count = 0;
+    restDesc.innerHTML = restaurantInfo["Pizza Hut"].Description;
     for(i in foodName) {
       for(x in restaurantInfo["Pizza Hut"].Menu) {
         foodName[count].innerHTML = x;
@@ -88,10 +98,12 @@ $( document ).ready(function() {
     }
   }
   else if(window.location == "http://localhost:3030/Potbelly") {
+    var restDesc = document.getElementById('descPB')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
     var foodPrice = document.getElementsByClassName("foodPrice");
     var count = 0;
+    restDesc.innerHTML = restaurantInfo["Potbelly"].Description;
     for(i in foodName) {
       for(x in restaurantInfo["Potbelly"].Menu) {
         foodName[count].innerHTML = x;
@@ -101,10 +113,12 @@ $( document ).ready(function() {
     }
   }
   else if(window.location == "http://localhost:3030/Wendys") {
+    var restDesc = document.getElementById('descWD')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
     var foodPrice = document.getElementsByClassName("foodPrice");
     var count = 0;
+    restDesc.innerHTML = restaurantInfo["Wendys"].Description;
     for(i in foodName) {
       for(x in restaurantInfo["Wendys"].Menu) {
         foodName[count].innerHTML = x;
@@ -112,12 +126,14 @@ $( document ).ready(function() {
         count++;
       }
     }
-  }/* */
+  }
   else if(window.location == "http://localhost:3030/CafeMexicali") {
+    var restDesc = document.getElementById('descCM')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
     var foodPrice = document.getElementsByClassName("foodPrice");
     var count = 0;
+    restDesc.innerHTML = restaurantInfo["Cafe Mexicali"].Description;
     for(i in foodName) {
       for(x in restaurantInfo["Cafe Mexicali"].Menu) {
         foodName[count].innerHTML = x;
@@ -127,10 +143,12 @@ $( document ).ready(function() {
     }
   }
   else if(window.location == "http://localhost:3030/FiveGuys") {
+    var restDesc = document.getElementById('descFG')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
     var foodPrice = document.getElementsByClassName("foodPrice");
     var count = 0;
+    restDesc.innerHTML = restaurantInfo["Five Guys"].Description;
     for(i in foodName) {
       for(x in restaurantInfo["Five Guys"].Menu) {
         foodName[count].innerHTML = x;
@@ -140,10 +158,12 @@ $( document ).ready(function() {
     }
   }
   else if(window.location == "http://localhost:3030/Cosmos") {
+    var restDesc = document.getElementById('descCP')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
     var foodPrice = document.getElementsByClassName("foodPrice");
     var count = 0;
+    restDesc.innerHTML = restaurantInfo["Cosmos"].Description;
     for(i in foodName) {
       for(x in restaurantInfo["Cosmos"].Menu) {
         foodName[count].innerHTML = x;
