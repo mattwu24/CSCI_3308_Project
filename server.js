@@ -7,6 +7,8 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/'));
+app.use('/resources',  express.static(__dirname + '/resources'));
+
 
 // index page 
 app.get('/', function(req, res) {
