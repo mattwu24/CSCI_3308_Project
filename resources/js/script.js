@@ -1,31 +1,164 @@
 $( document ).ready(function() {
-  console.log( "ready!" );
-
-  var restaurantCards = document.getElementsByClassName("restaurantCards");
-  var restaurantName = document.getElementsByClassName("restaurantName");
-  var restaurantRating = document.getElementsByClassName("restaurantRating");
-  var restaurantPrice = document.getElementsByClassName("restaurantPrice");
-  var restaurantType = document.getElementsByClassName("restaurantType");
-  var restaurantLink = document.getElementsByClassName("restaurantLink");
-  var restaurantPic = document.getElementsByClassName("card-img-top");
-console.log(restaurantCards);
-  var count = 0;
-  for(x in restaurantInfo) {
-    restaurantName[count].innerHTML = x;
-    restaurantRating[count].innerHTML = "<b>Rating:</b> " + restaurantInfo[x].AverageRating;
-    restaurantPrice[count].innerHTML = "<b>Price:</b> $" + restaurantInfo[x].AveragePrice;
-    restaurantType[count].innerHTML = "<b>Type:</b> " + restaurantInfo[x].FoodType;
-    restaurantLink[count].href = restaurantInfo[x].RestaurantLink;
-    restaurantLink[count].setAttribute('target', '_blank');
-    restaurantLink[count].innerHTML = "Company Website";
-    var filterAtt = restaurantInfo[x].AverageRating + "," + restaurantInfo[x].AveragePrice + "," + restaurantInfo[x].FoodType;
-    // set filter val
-    //$('.restaurantCards').data('filterval', filterAtt);
-    restaurantCards[count].setAttribute('data-filter', filterAtt);
-    //console.log(restaurantCards[x]);
-    
-    count++; 
+  console.log( window.location  );
+  if(window.location == "http://localhost:3030/index" || window.location == "http://localhost:3030" || window.location == "http://localhost:3030/index#") {
+    var restaurantCards = document.getElementsByClassName("restaurantCards");
+    var restaurantName = document.getElementsByClassName("restaurantName");
+    var restaurantRating = document.getElementsByClassName("restaurantRating");
+    var restaurantPrice = document.getElementsByClassName("restaurantPrice");
+    var restaurantType = document.getElementsByClassName("restaurantType");
+    var restaurantLink = document.getElementsByClassName("restaurantLink");
+    var count = 0;
+    for(x in restaurantInfo) {
+      restaurantName[count].innerHTML = x;
+      restaurantRating[count].innerHTML = "<b>Rating:</b> " + restaurantInfo[x].AverageRating;
+      restaurantPrice[count].innerHTML = "<b>Price:</b> $" + restaurantInfo[x].AveragePrice;
+      restaurantType[count].innerHTML = "<b>Type:</b> " + restaurantInfo[x].FoodType;
+      restaurantLink[count].href = restaurantInfo[x].RestaurantLink;
+      restaurantLink[count].setAttribute('target', '_blank');
+      restaurantLink[count].innerHTML = "Company Website";
+      var filterAtt = restaurantInfo[x].AverageRating + "," + restaurantInfo[x].AveragePrice + "," + restaurantInfo[x].FoodType;
+      restaurantCards[count].setAttribute('data-filter', filterAtt);
+      count++; 
+    }
   }
+
+  // create menu items
+  else if(window.location == "http://localhost:3030/Mcdonalds") {
+    var menuCards = document.getElementsByClassName("menuCard");
+    var foodName = document.getElementsByClassName("foodName");
+    var foodPrice = document.getElementsByClassName("foodPrice");
+    var count = 0;
+    for(i in foodName) {
+      for(x in restaurantInfo["McDonalds"].Menu) {
+        foodName[count].innerHTML = x;
+        foodPrice[count].innerHTML = "$" + restaurantInfo["McDonalds"].Menu[x];
+        count++;
+      }
+    }
+  }
+  else if(window.location == "http://localhost:3030/Qdoba") {
+    var menuCards = document.getElementsByClassName("menuCard");
+    var foodName = document.getElementsByClassName("foodName");
+    var foodPrice = document.getElementsByClassName("foodPrice");
+    var count = 0;
+    for(i in foodName) {
+      for(x in restaurantInfo["Qdoba"].Menu) {
+        foodName[count].innerHTML = x;
+        foodPrice[count].innerHTML = "$" + restaurantInfo["Qdoba"].Menu[x];
+        count++;
+      }
+    }
+  }
+  else if(window.location == "http://localhost:3030/Subway") {
+    var menuCards = document.getElementsByClassName("menuCard");
+    var foodName = document.getElementsByClassName("foodName");
+    var foodPrice = document.getElementsByClassName("foodPrice");
+    var count = 0;
+    for(i in foodName) {
+      for(x in restaurantInfo["Subway"].Menu) {
+        foodName[count].innerHTML = x;
+        foodPrice[count].innerHTML = "$" + restaurantInfo["Subway"].Menu[x];
+        count++;
+      }
+    }
+  }
+  else if(window.location == "http://localhost:3030/Dominos") {
+    var menuCards = document.getElementsByClassName("menuCard");
+    var foodName = document.getElementsByClassName("foodName");
+    var foodPrice = document.getElementsByClassName("foodPrice");
+    var count = 0;
+    for(i in foodName) {
+      for(x in restaurantInfo["Dominos"].Menu) {
+        foodName[count].innerHTML = x;
+        foodPrice[count].innerHTML = "$" + restaurantInfo["Dominos"].Menu[x];
+        count++;
+      }
+    }
+  }
+  else if(window.location == "http://localhost:3030/PizzaHut") {
+    var menuCards = document.getElementsByClassName("menuCard");
+    var foodName = document.getElementsByClassName("foodName");
+    var foodPrice = document.getElementsByClassName("foodPrice");
+    var count = 0;
+    for(i in foodName) {
+      for(x in restaurantInfo["Pizza Hut"].Menu) {
+        foodName[count].innerHTML = x;
+        foodPrice[count].innerHTML = "$" + restaurantInfo["Pizza Hut"].Menu[x];
+        count++;
+      }
+    }
+  }
+  else if(window.location == "http://localhost:3030/Potbelly") {
+    var menuCards = document.getElementsByClassName("menuCard");
+    var foodName = document.getElementsByClassName("foodName");
+    var foodPrice = document.getElementsByClassName("foodPrice");
+    var count = 0;
+    for(i in foodName) {
+      for(x in restaurantInfo["Potbelly"].Menu) {
+        foodName[count].innerHTML = x;
+        foodPrice[count].innerHTML = "$" + restaurantInfo["Potbelly"].Menu[x];
+        count++;
+      }
+    }
+  }
+  else if(window.location == "http://localhost:3030/Wendys") {
+    var menuCards = document.getElementsByClassName("menuCard");
+    var foodName = document.getElementsByClassName("foodName");
+    var foodPrice = document.getElementsByClassName("foodPrice");
+    var count = 0;
+    for(i in foodName) {
+      for(x in restaurantInfo["Wendys"].Menu) {
+        foodName[count].innerHTML = x;
+        foodPrice[count].innerHTML = "$" + restaurantInfo["Wendys"].Menu[x];
+        count++;
+      }
+    }
+  }
+  else if(window.location == "http://localhost:3030/CafeMexicali") {
+    var menuCards = document.getElementsByClassName("menuCard");
+    var foodName = document.getElementsByClassName("foodName");
+    var foodPrice = document.getElementsByClassName("foodPrice");
+    var count = 0;
+    for(i in foodName) {
+      for(x in restaurantInfo["Cafe Mexicali"].Menu) {
+        foodName[count].innerHTML = x;
+        foodPrice[count].innerHTML = "$" + restaurantInfo["Cafe Mexicali"].Menu[x];
+        count++;
+      }
+    }
+  }
+  else if(window.location == "http://localhost:3030/FiveGuys") {
+    var menuCards = document.getElementsByClassName("menuCard");
+    var foodName = document.getElementsByClassName("foodName");
+    var foodPrice = document.getElementsByClassName("foodPrice");
+    var count = 0;
+    for(i in foodName) {
+      for(x in restaurantInfo["Five Guys"].Menu) {
+        foodName[count].innerHTML = x;
+        foodPrice[count].innerHTML = "$" + restaurantInfo["Five Guys"].Menu[x];
+        count++;
+      }
+    }
+  }
+  else if(window.location == "http://localhost:3030/Cosmos") {
+    var menuCards = document.getElementsByClassName("menuCard");
+    var foodName = document.getElementsByClassName("foodName");
+    var foodPrice = document.getElementsByClassName("foodPrice");
+    var count = 0;
+    for(i in foodName) {
+      for(x in restaurantInfo["Cosmos"].Menu) {
+        foodName[count].innerHTML = x;
+        foodPrice[count].innerHTML = "$" + restaurantInfo["Cosmos"].Menu[x];
+        count++;
+      }
+    }
+  }
+});
+
+$(function () {
+  $('a').click(function() {
+    console.log("IN")
+  });
 });
 
 $(function () {
@@ -61,7 +194,7 @@ $(function () {
             break;
           }
           else if(filterFoodType[i].value.includes(filterParsed[2])) {
-            restaurantCards[h].style.display = "none";
+            restaurantCards[h].style.display = "block";
             break;
           }
           else {
@@ -91,7 +224,7 @@ $(function () {
 
 // Temp Database
 var restaurantInfo =
-{'McDonald\'s': 
+{'McDonalds': 
 {'FoodType' : "Fast Food",
 'AveragePrice' : 3.25,
 'AverageRating' : 3.0,
@@ -121,7 +254,7 @@ var restaurantInfo =
 'RestaurantLink' : 'https://www.subway.com/en-US',
 'Picture' : 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Subway_restaurant.svg/200px-Subway_restaurant.svg.png'
 },
-'Domino\'s': 
+'Dominos': 
 {'FoodType' : 'Pizza',
 'AveragePrice' : 7.25,
 'AverageRating' : 2.0,
@@ -151,7 +284,7 @@ var restaurantInfo =
 'RestaurantLink' : 'https://www.potbelly.com/',
 'Picture' : 'https://www.potbelly.com/img/logo.svg'
 },
-'Wendy\'s': 
+'Wendys': 
 {'FoodType' : 'Fast Food',
 'AveragePrice' : 5.25,
 'AverageRating' : 2.5,
@@ -181,7 +314,7 @@ var restaurantInfo =
 'RestaurantLink' : 'https://www.fiveguys.com/',
 'Picture' : 'https://static.thuisbezorgd.nl/images/chains/nl/fiveguys/logo_465x320.png'
 },
-'Cosmos Pizza': 
+'Cosmos': 
 {'FoodType' : 'Pizza',
 'AveragePrice' : 3.50,
 'AverageRating' : 3.3,
