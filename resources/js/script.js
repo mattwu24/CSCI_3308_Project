@@ -1,6 +1,5 @@
 $( document ).ready(function() {
-  console.log( window.location  );
-  if(window.location == "http://localhost:3030/index" || window.location == "http://localhost:3030" || window.location == "http://localhost:3030/index#") {
+  if(window.location == "http://localhost:3030/index" || window.location == "http://localhost:3030/" || window.location == "http://localhost:3030/index#") {
     var restaurantCards = document.getElementsByClassName("restaurantCards");
     var restaurantName = document.getElementsByClassName("restaurantName");
     var restaurantRating = document.getElementsByClassName("restaurantRating");
@@ -113,7 +112,7 @@ $( document ).ready(function() {
         count++;
       }
     }
-  }
+  }/* */
   else if(window.location == "http://localhost:3030/CafeMexicali") {
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -153,12 +152,6 @@ $( document ).ready(function() {
       }
     }
   }
-});
-
-$(function () {
-  $('a').click(function() {
-    console.log("IN")
-  });
 });
 
 $(function () {
