@@ -50,6 +50,11 @@ body {
     margin-right: 10%;
 }
 
+#menuCard {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
