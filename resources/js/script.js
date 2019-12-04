@@ -162,56 +162,40 @@ $(function () {
     var filterRating = document.getElementsByClassName("filterRating");
     var filtersChecked = [];
 
+
+    for(var i = 0; i < filterFoodType.length; i++) {
+      if(filterFoodType[i].checked) {
+        filtersChecked.push(filterFoodType[i].value);
+      }
+      if(filterRating[i].checked) {
+        filtersChecked.push(Number(filterRating[i].value));
+      }
+    }
+
+    console.log(filtersChecked)
     var curFilter;
     for(var h = 0; h < restaurantCards.length; h++) {
       curFilter = restaurantCards[h].getAttribute('data-filter');
+     //console.log(curFilter)
+      var filterParsed = curFilter.split(",");
+      for(var i = 0; i < filtersChecked.length; i++) {
 
-      for(var i = 0; i < filterFoodType.length; i++) {
-        if(filterFoodType[i].checked) {
-          filtersChecked.push(filterFoodType[i].value);
+        // check if food filter is checked
+        if(filtersChecked[i] == filterParsed[2]) {
+          restaurantCards[h].style.display = "block";
         }
-        if(filterRating[i].checked) {
-          filtersChecked.push(Number(filterRating[i].value));
-        }
-        // rating, price, food type
-        var filterParsed = curFilter.split(",");
-
-        if(filtersChecked.length == 0) {
-          for(var j = 0; j < restaurantCards.length; j++) {
-            restaurantCards[j].style.display = "none";
-          }
+        else if(filtersChecked[i] <= filterParsed[0]) {
+          restaurantCards[h].style.display = "block";
         }
         else {
-          if(filterRating[i].value >= filterParsed[0]) {
-            restaurantCards[h].style.display = "none";
-            break;
-          }
-          else if(filterFoodType[i].value.includes(filterParsed[2])) {
-            restaurantCards[h].style.display = "block";
-            break;
-          }
-          else {
-            restaurantCards[h].style.display = "block";
-            break;
-          }
+          restaurantCards[h].style.display = "none";
         }
       }
-      
-      //for(var j = 0; j < restaurantType.length; j++) {
-        /*
-        var ratingParsed = restaurantRating[j].innerText.split(":");
-        if(filterRating[i].checked && Number(ratingParsed[1]) < Number(filterRating[i].value)) {
-          restaurantCards[j].style.display = "none";
-        }
-        if(filterFoodType[i].checked && restaurantType[j].innerText.includes(filterFoodType[i].value)) {
-          restaurantCards[j].style.display = "block";
-        }
-        if(!filterRating[i].checked && !filterFoodType[i].checked && restaurantType[j].innerText.includes(filterFoodType[i].value)) {
-          restaurantCards[j].style.display = "none";
-        }*/
-      //}
+      if(filtersChecked.length == 0) {
+        restaurantCards[h].style.display = "block";
+      }
+      console.log(curFilter);
     }
-
   });
 });
 
