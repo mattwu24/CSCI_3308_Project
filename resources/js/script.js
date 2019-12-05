@@ -1,28 +1,5 @@
 $( document ).ready(function() {
-  if(window.location.pathname == "/index" || window.location.pathname == "" || window.location.pathname == "/index#") {
-    var restaurantCards = document.getElementsByClassName("restaurantCards");
-    var restaurantName = document.getElementsByClassName("restaurantName");
-    var restaurantRating = document.getElementsByClassName("restaurantRating");
-    var restaurantPrice = document.getElementsByClassName("restaurantPrice");
-    var restaurantType = document.getElementsByClassName("restaurantType");
-    var restaurantLink = document.getElementsByClassName("restaurantLink");
-    var count = 0;
-    for(x in restaurantInfo) {
-      restaurantName[count].innerHTML = x;
-      restaurantRating[count].innerHTML = "<b>Rating:</b> " + restaurantInfo[x].AverageRating;
-      restaurantPrice[count].innerHTML = "<b>Price:</b> $" + restaurantInfo[x].AveragePrice;
-      restaurantType[count].innerHTML = "<b>Type:</b> " + restaurantInfo[x].FoodType;
-      restaurantLink[count].href = restaurantInfo[x].RestaurantLink;
-      restaurantLink[count].setAttribute('target', '_blank');
-      restaurantLink[count].innerHTML = "Company Website";
-      var filterAtt = restaurantInfo[x].AverageRating + "," + restaurantInfo[x].AveragePrice + "," + restaurantInfo[x].FoodType;
-      restaurantCards[count].setAttribute('data-filter', filterAtt);
-      count++; 
-    }
-  }
-
-  // create menu items
-  else if(window.location.pathname == "/Mcdonalds") {
+  if(window.location.pathname == "/Mcdonalds") {
     var restDesc = document.getElementById('aboutMC');
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -171,6 +148,27 @@ $( document ).ready(function() {
         foodPrice[count].innerHTML = "$" + restaurantInfo["Cosmos"].Menu[x];
         count++;
       }
+    }
+  }
+  else {
+    var restaurantCards = document.getElementsByClassName("restaurantCards");
+    var restaurantName = document.getElementsByClassName("restaurantName");
+    var restaurantRating = document.getElementsByClassName("restaurantRating");
+    var restaurantPrice = document.getElementsByClassName("restaurantPrice");
+    var restaurantType = document.getElementsByClassName("restaurantType");
+    var restaurantLink = document.getElementsByClassName("restaurantLink");
+    var count = 0;
+    for(x in restaurantInfo) {
+      restaurantName[count].innerHTML = x;
+      restaurantRating[count].innerHTML = "<b>Rating:</b> " + restaurantInfo[x].AverageRating;
+      restaurantPrice[count].innerHTML = "<b>Price:</b> $" + restaurantInfo[x].AveragePrice;
+      restaurantType[count].innerHTML = "<b>Type:</b> " + restaurantInfo[x].FoodType;
+      restaurantLink[count].href = restaurantInfo[x].RestaurantLink;
+      restaurantLink[count].setAttribute('target', '_blank');
+      restaurantLink[count].innerHTML = "Company Website";
+      var filterAtt = restaurantInfo[x].AverageRating + "," + restaurantInfo[x].AveragePrice + "," + restaurantInfo[x].FoodType;
+      restaurantCards[count].setAttribute('data-filter', filterAtt);
+      count++; 
     }
   }
 });
