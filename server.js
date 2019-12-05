@@ -19,6 +19,7 @@ app.get('/', function(req, res) {
 	});
 });
 
+// index page
 app.get('/index', function(req, res) {
 	res.render('pages/index',{
 		local_css:"style.css", 
@@ -26,13 +27,14 @@ app.get('/index', function(req, res) {
 	});
 });
 
+// about page
 app.get('/about', function (req, res) {
 	res.render('pages/about', {
 		local_css: "style.css",
 		my_title: "About Page"
 	});
 });
-
+// team members page
 app.get('/team_members', function (req, res) {
 	res.render('pages/team_members', {
 		local_css: "style.css",
@@ -40,6 +42,7 @@ app.get('/team_members', function (req, res) {
 	});
 });
 
+// mcdonalds menu page
 app.get('/Mcdonalds', function (req, res) {
 	res.render('pages/mcdonalds', {
 		local_css: "style.css",
@@ -54,6 +57,7 @@ app.get('/Qdoba', function (req, res) {
 	});
 });
 
+// subway menu page
 app.get('/Subway', function (req, res) {
 	res.render('pages/subway', {
 		local_css: "style.css",
@@ -61,6 +65,7 @@ app.get('/Subway', function (req, res) {
 	});
 });
 
+// dominos menu page
 app.get('/Dominos', function (req, res) {
 	res.render('pages/dominos', {
 		local_css: "style.css",
@@ -68,6 +73,7 @@ app.get('/Dominos', function (req, res) {
 	});
 });
 
+// pizzahut menu page
 app.get('/PizzaHut', function (req, res) {
 	res.render('pages/pizzahut', {
 		local_css: "style.css",
@@ -75,6 +81,7 @@ app.get('/PizzaHut', function (req, res) {
 	});
 });
 
+// potbelly menu page
 app.get('/Potbelly', function (req, res) {
 	res.render('pages/potbelly', {
 		local_css: "style.css",
@@ -82,6 +89,7 @@ app.get('/Potbelly', function (req, res) {
 	});
 });
 
+// wendys menu page
 app.get('/Wendys', function (req, res) {
 	res.render('pages/wendys', {
 		local_css: "style.css",
@@ -89,6 +97,7 @@ app.get('/Wendys', function (req, res) {
 	});
 });
 
+// cafe mexicali menu page
 app.get('/CafeMexicali', function (req, res) {
 	res.render('pages/cafemexicali', {
 		local_css: "style.css",
@@ -96,6 +105,7 @@ app.get('/CafeMexicali', function (req, res) {
 	});
 });
 
+// five guys menu page
 app.get('/FiveGuys', function (req, res) {
 	res.render('pages/fiveguys', {
 		local_css: "style.css",
@@ -103,6 +113,7 @@ app.get('/FiveGuys', function (req, res) {
 	});
 });
 
+// cosmos menu page
 app.get('/Cosmos', function (req, res) {
 	res.render('pages/cosmos', {
 		local_css: "style.css",
@@ -110,6 +121,7 @@ app.get('/Cosmos', function (req, res) {
 	});
 });
 
+// prevent heroku dyno from going to sleep
 var reqTimer = setTimeout(function wakeUp() {
 	request("https://hungernulllive.herokuapp.com/", function() {
 	   console.log("WAKE UP DYNO");

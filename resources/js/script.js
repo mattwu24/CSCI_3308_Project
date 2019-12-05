@@ -1,6 +1,12 @@
 $( document ).ready(function() {
+
+  // if routing to McDonalds webpage, apply data from database regarding McDonalds
   if(window.location.pathname == "/Mcdonalds") {
+
+    // these contents can be turned into a function to be generalized
     var restDesc = document.getElementById('aboutMC');
+
+    // update each card on the page with the restaurant info
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
     var foodPrice = document.getElementsByClassName("foodPrice");
@@ -14,7 +20,11 @@ $( document ).ready(function() {
       }
     }
   }
+
+  // if routing to Qdoba webpage, apply data from database regarding Qdoba
   else if(window.location.pathname == "/Qdoba") {
+
+    // update each card on the page with the restaurant info
     var restDesc = document.getElementById('descQD')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -29,7 +39,11 @@ $( document ).ready(function() {
       }
     }
   }
+
+  // if routing to Subway webpage, apply data from database regarding Subway
   else if(window.location.pathname == "/Subway") {
+
+    // update each card on the page with the restaurant info
     var restDesc = document.getElementById('descSW')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -44,7 +58,11 @@ $( document ).ready(function() {
       }
     }
   }
+
+  // if routing to Dominos webpage, apply data from database regarding Dominos
   else if(window.location.pathname == "/Dominos") {
+
+    // update each card on the page with the restaurant info
     var restDesc = document.getElementById('descD')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -60,6 +78,8 @@ $( document ).ready(function() {
     }
   }
   else if(window.location.pathname == "/PizzaHut") {
+
+    // update each card on the page with the restaurant info
     var restDesc = document.getElementById('descPH')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -74,7 +94,11 @@ $( document ).ready(function() {
       }
     }
   }
+
+  // if routing to Potbelly webpage, apply data from database regarding Potbelly
   else if(window.location.pathname == "/Potbelly") {
+
+    // update each card on the page with the restaurant info
     var restDesc = document.getElementById('descPB')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -89,7 +113,11 @@ $( document ).ready(function() {
       }
     }
   }
+
+  // if routing to Wendys webpage, apply data from database regarding Wendys
   else if(window.location.pathname == "/Wendys") {
+
+    // update each card on the page with the restaurant info
     var restDesc = document.getElementById('descWD')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -104,7 +132,11 @@ $( document ).ready(function() {
       }
     }
   }
+
+  // if routing to Cafe Mexicali webpage, apply data from database regarding Cafe Mexicali
   else if(window.location.pathname == "/CafeMexicali") {
+
+    // update each card on the page with the restaurant info
     var restDesc = document.getElementById('descCM')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -119,7 +151,11 @@ $( document ).ready(function() {
       }
     }
   }
+
+  // if routing to Five Guys webpage, apply data from database regarding Five Guys
   else if(window.location.pathname == "/FiveGuys") {
+
+    // update each card on the page with the restaurant info
     var restDesc = document.getElementById('descFG')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -134,8 +170,11 @@ $( document ).ready(function() {
       }
     }
   }
+
+  // if routing to Cosmos webpage, apply data from database regarding Cosmos
   else if(window.location.pathname == "/Cosmos") {
-    console.log(window.location)
+
+    // update each card on the page with the restaurant info
     var restDesc = document.getElementById('descCP')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -150,7 +189,11 @@ $( document ).ready(function() {
       }
     }
   }
+
+  // routed to main page, update cards with restaurant info
   else {
+
+    // get elements that we want to populate with info
     var restaurantCards = document.getElementsByClassName("restaurantCards");
     var restaurantName = document.getElementsByClassName("restaurantName");
     var restaurantRating = document.getElementsByClassName("restaurantRating");
@@ -158,6 +201,8 @@ $( document ).ready(function() {
     var restaurantType = document.getElementsByClassName("restaurantType");
     var restaurantLink = document.getElementsByClassName("restaurantLink");
     var count = 0;
+
+    // for each card, add the rating, price, food type, company website, company name, filter-data, etc
     for(x in restaurantInfo) {
       restaurantName[count].innerHTML = x;
       restaurantRating[count].innerHTML = "<b>Rating:</b> " + restaurantInfo[x].AverageRating;
@@ -173,8 +218,13 @@ $( document ).ready(function() {
   }
 });
 
+// when a button is clicked
 $(function () {
   $('button').click(function() {
+
+    // submit cart button clicked, time to populate cart with menu items
+
+    // get cards
     var foodName = document.getElementsByClassName("foodName");
     var foodPrice = document.getElementsByClassName("foodPrice");
     var cartContentsID = document.getElementById("cartContents");
@@ -182,16 +232,26 @@ $(function () {
     var submitCart = document.getElementById("submitCart");
     var price = 0;
     cartContentsID.innerHTML = "";
+
+    // iterate over all the checkboxes
     for(var i = 0; i < itemsChecked.length; i++) {
+
+      // if a checkbox is checked, add the price of the item to total and update cart contents with price and name
       if(itemsChecked[i].checked) {
         price += Number(foodPrice[i].innerText.split('$')[1]);
         cartContentsID.innerHTML += foodName[i].innerText + ": " + foodPrice[i].innerText + "<br>";
       }
     }
+
+    // display cart contents total price
     cartContentsID.innerHTML += "Total Price: $" + price;
+
+    // disable submit cart button
     submitCart.disabled = true;
   });
 });
+
+// when a checkbox is selected
 $(function () {
   $('input').click(function() {
 
@@ -201,7 +261,7 @@ $(function () {
     var filterRating = document.getElementsByClassName("filterRating");
     var filtersChecked = [];
 
-
+    // for each filter selected, track the value
     for(var i = 0; i < filterFoodType.length; i++) {
       if(filterFoodType[i].checked) {
         filtersChecked.push(filterFoodType[i].value);
@@ -211,7 +271,7 @@ $(function () {
       }
     }
 
-    console.log(filtersChecked)
+    // if the filter contains at least one of the filters found in data-filter, hide the element
     var curFilter;
     for(var h = 0; h < restaurantCards.length; h++) {
       curFilter = restaurantCards[h].getAttribute('data-filter');
@@ -233,7 +293,6 @@ $(function () {
       if(filtersChecked.length == 0) {
         restaurantCards[h].style.display = "block";
       }
-      console.log(curFilter);
     }
   });
 });
