@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-  if(window.location == "http://localhost:3030/index" || window.location == "http://localhost:3030/" || window.location == "http://localhost:3030/index#") {
+  if(window.location.pathname == "/index" || window.location.pathname == "" || window.location.pathname == "/index#") {
     var restaurantCards = document.getElementsByClassName("restaurantCards");
     var restaurantName = document.getElementsByClassName("restaurantName");
     var restaurantRating = document.getElementsByClassName("restaurantRating");
@@ -22,7 +22,7 @@ $( document ).ready(function() {
   }
 
   // create menu items
-  else if(window.location == "http://localhost:3030/Mcdonalds") {
+  else if(window.location.pathname == "/Mcdonalds") {
     var restDesc = document.getElementById('aboutMC');
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -37,7 +37,7 @@ $( document ).ready(function() {
       }
     }
   }
-  else if(window.location == "http://localhost:3030/Qdoba") {
+  else if(window.location.pathname == "/Qdoba") {
     var restDesc = document.getElementById('descQD')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -52,7 +52,7 @@ $( document ).ready(function() {
       }
     }
   }
-  else if(window.location == "http://localhost:3030/Subway") {
+  else if(window.location.pathname == "/Subway") {
     var restDesc = document.getElementById('descSW')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -67,7 +67,7 @@ $( document ).ready(function() {
       }
     }
   }
-  else if(window.location == "http://localhost:3030/Dominos") {
+  else if(window.location.pathname == "/Dominos") {
     var restDesc = document.getElementById('descD')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -82,7 +82,7 @@ $( document ).ready(function() {
       }
     }
   }
-  else if(window.location == "http://localhost:3030/PizzaHut") {
+  else if(window.location.pathname == "/PizzaHut") {
     var restDesc = document.getElementById('descPH')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -97,7 +97,7 @@ $( document ).ready(function() {
       }
     }
   }
-  else if(window.location == "http://localhost:3030/Potbelly") {
+  else if(window.location.pathname == "/Potbelly") {
     var restDesc = document.getElementById('descPB')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -112,7 +112,7 @@ $( document ).ready(function() {
       }
     }
   }
-  else if(window.location == "http://localhost:3030/Wendys") {
+  else if(window.location.pathname == "/Wendys") {
     var restDesc = document.getElementById('descWD')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -127,7 +127,7 @@ $( document ).ready(function() {
       }
     }
   }
-  else if(window.location == "http://localhost:3030/CafeMexicali") {
+  else if(window.location.pathname == "/CafeMexicali") {
     var restDesc = document.getElementById('descCM')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -142,7 +142,7 @@ $( document ).ready(function() {
       }
     }
   }
-  else if(window.location == "http://localhost:3030/FiveGuys") {
+  else if(window.location.pathname == "/FiveGuys") {
     var restDesc = document.getElementById('descFG')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
@@ -157,7 +157,8 @@ $( document ).ready(function() {
       }
     }
   }
-  else if(window.location == "http://localhost:3030/Cosmos") {
+  else if(window.location.pathname == "/Cosmos") {
+    console.log(window.location)
     var restDesc = document.getElementById('descCP')
     var menuCards = document.getElementsByClassName("menuCard");
     var foodName = document.getElementsByClassName("foodName");
