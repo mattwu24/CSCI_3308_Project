@@ -175,7 +175,27 @@ $( document ).ready(function() {
 });
 
 $(function () {
+  $('button').click(function() {
+    var foodName = document.getElementsByClassName("foodName");
+    var foodPrice = document.getElementsByClassName("foodPrice");
+    var cartContentsID = document.getElementById("cartContents");
+    var itemsChecked = document.getElementsByClassName("addToCart");
+    var submitCart = document.getElementById("submitCart");
+    var price = 0;
+    cartContentsID.innerHTML = "";
+    for(var i = 0; i < itemsChecked.length; i++) {
+      if(itemsChecked[i].checked) {
+        price += Number(foodPrice[i].innerText.split('$')[1]);
+        cartContentsID.innerHTML += foodName[i].innerText + ": " + foodPrice[i].innerText + "<br>";
+      }
+    }
+    cartContentsID.innerHTML += "Total Price: $" + price;
+    submitCart.disabled = true;
+  });
+});
+$(function () {
   $('input').click(function() {
+
     // read what is selected
     var restaurantCards = document.getElementsByClassName("restaurantCards");
     var filterFoodType = document.getElementsByClassName("filterFoodType");
